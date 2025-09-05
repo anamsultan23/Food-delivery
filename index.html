@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickBite - Fast Food Delivery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo" onclick="scrollToTop()">QuickBite</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#featured">Menu</a></li>
+            <li><a href="#delivery">Delivery</a></li>
+        </ul>
+        <button class="cart-btn" onclick="openCart()">
+            Cart
+            <span class="cart-count" id="cartCount">0</span>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Delicious Food<br>Delivered Fast</h1>
+            <p>Get your favorite meals delivered to your doorstep in under 30 minutes. Fresh, hot, and ready to enjoy!</p>
+            <button class="cta-btn" onclick="document.getElementById('search').scrollIntoView()">Order Now</button>
+        </div>
+        <div class="hero-image">
+            <div class="floating-food"></div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section" id="search">
+        <h2>What are you craving today?</h2>
+        <div class="search-container">
+            <input type="text" class="search-box" placeholder="Search for restaurants, cuisines, or dishes..." id="searchInput">
+            <button class="search-btn" onclick="performSearch()">🔍</button>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories" id="categories">
+        <h2 class="section-title">Popular Categories</h2>
+        <div class="category-grid">
+            <div class="category-card" onclick="filterByCategory('pizza')">
+                <div class="category-icon">🍕</div>
+                <h3>Pizza</h3>
+                <p>Cheesy goodness delivered hot</p>
+            </div>
+            <div class="category-card" onclick="filterByCategory('burger')">
+                <div class="category-icon">🍔</div>
+                <h3>Burgers</h3>
+                <p>Juicy and satisfying</p>
+            </div>
+            <div class="category-card" onclick="filterByCategory('sushi')">
+                <div class="category-icon">🍣</div>
+                <h3>Sushi</h3>
+                <p>Fresh and authentic</p>
+            </div>
+            <div class="category-card" onclick="filterByCategory('dessert')">
+                <div class="category-icon">🍰</div>
+                <h3>Desserts</h3>
+                <p>Sweet treats for any occasion</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Items -->
+    <section class="featured" id="featured">
+        <h2 class="section-title" style="color: #333;">Featured Items</h2>
+        <div class="featured-grid" id="featuredGrid">
+            <!-- Food items will be populated by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Delivery Info -->
+    <section class="delivery-info" id="delivery">
+        <h2 class="section-title">Why Choose QuickBite?</h2>
+        <div class="delivery-features">
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Lightning Fast</h3>
+                <p>30 minutes or it's free!</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🌟</div>
+                <h3>Top Quality</h3>
+                <p>Only the freshest ingredients</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <h3>Easy Ordering</h3>
+                <p>Simple, intuitive app experience</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 QuickBite. All rights reserved. Delivering happiness, one meal at a time.</p>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCart()">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cartItems"></div>
+            <div id="cartTotal"></div>
+            <button class="cta-btn" onclick="checkout()" style="margin-top: 1rem;">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
